@@ -1,6 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Home, History, Plus, Settings } from "lucide-react"
+import { Home, History, Settings, Car, HomeIcon, WashingMachineIcon as Washing } from "lucide-react"
 
 export function Footer() {
   return (
@@ -20,9 +22,13 @@ export function Footer() {
             </Button>
           </Link>
           <Link href="/devices">
-            <Button variant="ghost" size="icon" className="flex flex-col items-center">
-              <Plus className="h-5 w-5" />
-              <span className="text-xs mt-1">Add</span>
+            <Button variant="ghost" size="icon" className="flex flex-col items-center relative">
+              <div className="relative">
+                <Car className="h-5 w-5 absolute -left-4 top-0" />
+                <HomeIcon className="h-5 w-5" />
+                <Washing className="h-5 w-5 absolute -right-4 top-0" />
+              </div>
+              <span className="text-xs mt-1">Devices</span>
             </Button>
           </Link>
           <Link href="/settings">
