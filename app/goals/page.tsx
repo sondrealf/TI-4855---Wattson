@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, ArrowRight, DollarSign } from "lucide-react"
+import { ArrowLeft, ArrowRight, DollarSign, Sprout } from "lucide-react"
 import Link from "next/link"
 
 function NatureIcon() {
@@ -48,7 +48,7 @@ export default function GoalsPage() {
             <CardContent className="p-8">
               <label className="flex flex-col items-center space-y-4 cursor-pointer text-center">
                 <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center">
-                  <NatureIcon />
+                  <Sprout size={40} />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Environment</h3>

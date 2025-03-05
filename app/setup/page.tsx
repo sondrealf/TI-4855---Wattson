@@ -24,11 +24,11 @@ export default function SetupPage() {
           ].map((device, i) => (
             <Card
               key={i}
-              className="relative rounded-2xl hover:shadow-lg transition-shadow bg-green-100 bg-opacity-50 border-green-100 hover:border-green-200"
+              className="relative rounded-2xl hover:shadow-lg transition-shadow bg-green-100 bg-opacity-60 border-green-100 hover:border-green-200"
             >
               <CardContent className="p-6">
                 <label className="flex items-center space-x-4 cursor-pointer">
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full border border-2 border-black flex items-center justify-center border-opacity-100">
                     <device.icon className="w-6 h-6 text-black" />
                   </div>
                   <div className="flex-1">
@@ -44,7 +44,7 @@ export default function SetupPage() {
           ))}
         </div>
 
-        <div className="pt-8 flex justify-between items-center">
+        <div className="pt-8 flex justify-between items-center mx-4">
           <div className="flex flex-col items-center">
             <Button size="icon" className="h-12 w-12 rounded-full mb-2 bg-green-600 hover:bg-green-700">
               <ArrowLeft className="h-6 w-6" />
