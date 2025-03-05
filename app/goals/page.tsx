@@ -19,7 +19,7 @@ function NatureIcon() {
 
 export default function GoalsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-4">
+    <div className="min-h-screen p-4">
       <div className="container max-w-md mx-auto space-y-6">
         <div className="text-center space-y-2 mb-8">
           <h1 className="text-2xl font-bold">Choose Your Main Goal</h1>
@@ -27,11 +27,11 @@ export default function GoalsPage() {
         </div>
 
         <div className="space-y-4">
-          <Card className="relative rounded-2xl hover:shadow-lg transition-shadow border-green-100 hover:border-green-200">
+          <Card className="relative rounded-2xl hover:shadow-lg transition-shadow bg-green-100 border-green-100 bg-opacity-50 hover:border-green-200">
             <CardContent className="p-8">
               <label className="flex flex-col items-center space-y-4 cursor-pointer text-center">
-                <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center">
-                  <DollarSign className="w-10 h-10 text-green-600" />
+                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center">
+                  <DollarSign className="w-10 h-10 text-black" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Economy</h3>
@@ -44,10 +44,10 @@ export default function GoalsPage() {
             </CardContent>
           </Card>
 
-          <Card className="relative rounded-2xl hover:shadow-lg transition-shadow border-green-100 hover:border-green-200">
+          <Card className="relative rounded-2xl hover:shadow-lg transition-shadow bg-green-100 bg-opacity-50 border-green-100 hover:border-green-200">
             <CardContent className="p-8">
               <label className="flex flex-col items-center space-y-4 cursor-pointer text-center">
-                <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center">
                   <NatureIcon />
                 </div>
                 <div>
@@ -64,7 +64,7 @@ export default function GoalsPage() {
 
         <div className="pt-8 flex justify-between items-center">
           <div className="flex flex-col items-center">
-            <Button variant="outline" size="icon" className="h-12 w-12 rounded-full mb-2" asChild>
+            <Button size="icon" className="h-12 w-12 rounded-full mb-2 bg-green-600 hover:bg-green-700" asChild>
               <Link href="/setup">
                 <ArrowLeft className="h-6 w-6" />
               </Link>

@@ -1,10 +1,14 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: "PowerSmart",
+  description: "Smart energy management app",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -14,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.className} bg-gradient-to-b from-blue-100 to-blue-100`}>{children}</body>
     </html>
   )
 }
+
+
+
+import './globals.css'

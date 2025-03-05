@@ -5,21 +5,27 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Plus, Battery } from "lucide-react"
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts"
 import { Footer } from "@/components/footer"
+import { Header } from "@/components/header"
+import Link from "next/link"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const data = [
-  { time: "00:00", value: 0.43 },
-  { time: "03:00", value: 0.38 },
-  { time: "06:00", value: 0.45 },
-  { time: "09:00", value: 0.52 },
-  { time: "12:00", value: 0.48 },
-  { time: "15:00", value: 0.51 },
-  { time: "18:00", value: 0.55 },
+  { time: "00:00", value: 0.23 },
+  { time: "03:00", value: 0.28 },
+  { time: "06:00", value: 1.45 },
+  { time: "06:01", value: 1.65 },
+  { time: "06:59", value: 1.35 },
+  { time: "07:00", value: 1.45 },
+  { time: "09:00", value: 1.00 },
+  { time: "12:00", value: 0.9 },
+  { time: "15:00", value: 1.51 },
+  { time: "18:00", value: 1.2 },
   { time: "21:00", value: 0.46 },
 ]
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-blue-50">
+    <div className="flex flex-col min-h-screen">
       <main className="flex-1 container max-w-md mx-auto p-4 pb-24">
         {/* Header */}
         <div className="relative mb-6 bg-gradient-to-br from-blue-600 to-blue-400 rounded-3xl p-6 text-white">
@@ -44,6 +50,32 @@ export default function HomePage() {
             <img src="/placeholder.svg?height=128&width=192" alt="" className="w-full h-full object-contain" />
           </div>
         </div>
+
+        {/* Price Graph */}
+        <Card className="mb-6 bg-white/50 backdrop-blur border-none">
+          <CardContent className="p-4">
+            <div className="mb-4">
+              <h3 className="font-medium">Today's Power Price</h3>
+              <p className="text-sm text-muted-foreground">Spot price per hour</p>
+            </div>
+            <div className="h-[200px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
+                  <defs>
+                    <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#2563EB" stopOpacity={0.1} />
+                      <stop offset="95%" stopColor="#2563EB" stopOpacity={0} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                  <XAxis dataKey="time" tick={{ fontSize: 12 }} stroke="#6B7280" />
+                  <YAxis tick={{ fontSize: 12 }} stroke="#6B7280" tickFormatter={(value) => `${value} kr`} />
+                  <Area type="stepAfter" dataKey="value" stroke="#2563EB" strokeWidth={2} fill="url(#colorValue)" />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Quick Actions */}
         <div className="grid grid-cols-2 gap-4 mb-6">
@@ -71,33 +103,6 @@ export default function HomePage() {
             </CardContent>
           </Card>
         </div>
-
-        {/* Price Graph */}
-        <Card className="mb-6 bg-white/50 backdrop-blur border-none">
-          <CardContent className="p-4">
-            <div className="mb-4">
-              <h3 className="font-medium">Today's Power Price</h3>
-              <p className="text-sm text-muted-foreground">Spot price per hour</p>
-            </div>
-            <div className="h-[200px] w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                  <defs>
-                    <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#2563EB" stopOpacity={0.1} />
-                      <stop offset="95%" stopColor="#2563EB" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                  <XAxis dataKey="time" tick={{ fontSize: 12 }} stroke="#6B7280" />
-                  <YAxis tick={{ fontSize: 12 }} stroke="#6B7280" tickFormatter={(value) => `${value} kr`} />
-                  <Area type="monotone" dataKey="value" stroke="#2563EB" strokeWidth={2} fill="url(#colorValue)" />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Analysis Card */}
         <Card className="bg-white/50 backdrop-blur border-none">
           <CardContent className="p-4">

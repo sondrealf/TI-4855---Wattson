@@ -1,109 +1,97 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Car, Droplet, Flame } from "lucide-react"
-import { Switch } from "@/components/ui/switch"
+import { Card } from "@/components/ui/card"
+import { Car, Droplet, Flame, PencilIcon } from "lucide-react"
 import { Footer } from "@/components/footer"
+import { Header } from "@/components/header"
 
 export default function DevicesPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-blue-50">
+    <div className="flex flex-col min-h-screen">
       <main className="flex-1 container max-w-md mx-auto p-4 pb-24">
-        {/* Header */}
-        <div className="relative mb-6 bg-gradient-to-br from-blue-600 to-blue-400 rounded-3xl p-6 text-white">
-          <div className="relative z-10">
-            <h1 className="text-2xl font-medium mb-1">Smart Charging</h1>
-            <p className="text-sm opacity-90 mb-4">Tesla Model S</p>
+        <Header title="Devices" subtitle="Manage your connected devices" />
 
-            <div className="bg-white/10 rounded-xl p-4 backdrop-blur">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <p className="font-medium">Currently charging 7.4 kW</p>
-                  <p className="text-sm opacity-90">Approx. 2h 30m remaining</p>
-                </div>
-                <p className="text-3xl font-bold">
-                  112<span className="text-lg font-normal">km</span>
-                </p>
+        <div className="space-y-4 mb-6">
+          <h2 className="text-xl font-semibold">Your Devices</h2>
+
+          <Card className="rounded-xl overflow-hidden border-none shadow-sm">
+            <div className="flex items-center p-4">
+              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                <Car className="w-6 h-6 text-blue-600" />
               </div>
-              <div className="h-2 bg-white/20 rounded-full overflow-hidden">
-                <div className="h-full w-3/4 bg-white rounded-full" />
+              <div className="flex-1">
+                <h3 className="font-medium">EV Charger</h3>
+                <p className="text-sm text-muted-foreground">Tesla Model 3</p>
+              </div>
+              <Button variant="ghost" size="sm" className="rounded-full">
+                <PencilIcon className="h-4 w-4" />
+              </Button>
+            </div>
+            <div className="px-4 pb-4 pt-1">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm font-medium">Status:</span>
+                <span className="text-sm text-blue-600">Connected</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-medium">Last charged:</span>
+                <span className="text-sm">Today, 08:30</span>
               </div>
             </div>
-          </div>
-          <div className="absolute bottom-0 right-0 w-48 h-32 opacity-20">
-            <img src="/placeholder.svg?height=128&width=192" alt="" className="w-full h-full object-contain" />
-          </div>
+          </Card>
+
+          <Card className="rounded-xl overflow-hidden border-none shadow-sm">
+            <div className="flex items-center p-4">
+              <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                <Droplet className="w-6 h-6 text-green-600" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-medium">Water Heater</h3>
+                <p className="text-sm text-muted-foreground">OSO Super S 200</p>
+              </div>
+              <Button variant="ghost" size="sm" className="rounded-full">
+                <PencilIcon className="h-4 w-4" />
+              </Button>
+            </div>
+            <div className="px-4 pb-4 pt-1">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm font-medium">Status:</span>
+                <span className="text-sm text-green-600">Active</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-medium">Temperature:</span>
+                <span className="text-sm">65°C</span>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="rounded-xl overflow-hidden border-none shadow-sm">
+            <div className="flex items-center p-4">
+              <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mr-4">
+                <Flame className="w-6 h-6 text-yellow-600" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-medium">Heating</h3>
+                <p className="text-sm text-muted-foreground">Panel heater - Living room</p>
+              </div>
+              <Button variant="ghost" size="sm" className="rounded-full">
+                <PencilIcon className="h-4 w-4" />
+              </Button>
+            </div>
+            <div className="px-4 pb-4 pt-1">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm font-medium">Status:</span>
+                <span className="text-sm text-green-600">On</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-medium">Target temperature:</span>
+                <span className="text-sm">21°C</span>
+              </div>
+            </div>
+          </Card>
         </div>
 
-        <Card className="mb-4 bg-white/50 backdrop-blur border-none">
-          <CardContent className="p-4">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                  <Car className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Smart Charging</h3>
-                  <p className="text-sm text-muted-foreground">Charge when prices are lowest</p>
-                </div>
-              </div>
-              <Switch />
-            </div>
-            <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-              <span className="text-sm">Charging should complete by</span>
-              <Button variant="ghost" className="text-green-600">
-                07:00 →
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="mb-4 bg-white/50 backdrop-blur border-none">
-          <CardContent className="p-4">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                  <Droplet className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Water Heater</h3>
-                  <p className="text-sm text-muted-foreground">Smart water heating</p>
-                </div>
-              </div>
-              <Switch />
-            </div>
-            <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-              <span className="text-sm">Target temperature</span>
-              <Button variant="ghost" className="text-green-600">
-                65°C →
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-white/50 backdrop-blur border-none">
-          <CardContent className="p-4">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                  <Flame className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Heating</h3>
-                  <p className="text-sm text-muted-foreground">Automatic temperature control</p>
-                </div>
-              </div>
-              <Switch />
-            </div>
-            <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-              <span className="text-sm">Target temperature</span>
-              <Button variant="ghost" className="text-green-600">
-                21°C →
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <Button className="w-full bg-green-600 hover:bg-green-700">Add new device</Button>
       </main>
 
       <Footer />

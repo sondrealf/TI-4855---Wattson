@@ -17,21 +17,16 @@ import {
   Share2,
 } from "lucide-react"
 import { Footer } from "@/components/footer"
+import { Header } from "@/components/header"
 
 export default function SettingsPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-blue-50">
+    <div className="flex flex-col min-h-screen">
       <main className="flex-1 container max-w-md mx-auto p-4 pb-24">
-        {/* Header */}
-        <div className="relative mb-6 bg-gradient-to-br from-blue-600 to-blue-400 rounded-3xl p-6 text-white">
-          <div className="relative z-10">
-            <h1 className="text-2xl font-medium mb-1">Settings</h1>
-            <p className="text-sm opacity-90">Customize your power experience</p>
-          </div>
-        </div>
+        <Header title="Settings" subtitle="Customize your power experience" />
 
         {/* Profile Section */}
-        <Card className="mb-4 bg-white/50 backdrop-blur border-none">
+        <Card className="mb-4 bg-white/85 backdrop-blur border-none">
           <CardContent className="p-4">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
@@ -49,7 +44,7 @@ export default function SettingsPage() {
         </Card>
 
         {/* Power Agreement */}
-        <Card className="mb-6 bg-white/50 backdrop-blur border-none">
+        <Card className="mb-6 bg-white/85 backdrop-blur border-none">
           <CardContent className="p-4">
             <h3 className="font-medium mb-4">Power Agreement</h3>
             <div className="space-y-4">
@@ -82,7 +77,7 @@ export default function SettingsPage() {
         </Card>
 
         {/* Preferences */}
-        <Card className="mb-6 bg-white/50 backdrop-blur border-none">
+        <Card className="mb-6 bg-white/85 backdrop-blur border-none">
           <CardContent className="p-4">
             <h3 className="font-medium mb-4">Preferences</h3>
             <div className="space-y-4">
@@ -125,7 +120,7 @@ export default function SettingsPage() {
         </Card>
 
         {/* Security & Support */}
-        <Card className="mb-6 bg-white/50 backdrop-blur border-none">
+        <Card className="mb-6 bg-white/85 backdrop-blur border-none">
           <CardContent className="p-4">
             <h3 className="font-medium mb-4">Security & Support</h3>
             <div className="space-y-4">
@@ -172,7 +167,7 @@ export default function SettingsPage() {
         </Card>
 
         {/* About & Legal */}
-        <Card className="bg-white/50 backdrop-blur border-none">
+        <Card className="bg-white/85 backdrop-blur border-none">
           <CardContent className="p-4">
             <div className="space-y-4">
               <Button variant="ghost" className="w-full justify-start text-green-600">

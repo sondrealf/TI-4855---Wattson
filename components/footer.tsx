@@ -6,7 +6,7 @@ import { Home, History, Settings, Car, HomeIcon, WashingMachineIcon as Washing }
 
 export function Footer() {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 border-t bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60 p-2 z-50">
+    <nav className="fixed bottom-0 left-0 right-0 border-t bg-blue-50 backdrop-blur-lg supports-[backdrop-filter]:bg-blue-50 p-2 z-50">
       <div className="container max-w-md mx-auto">
         <div className="flex justify-around items-center">
           <Link href="/">
