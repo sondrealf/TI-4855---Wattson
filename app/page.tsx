@@ -5,9 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Plus, Battery } from "lucide-react"
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts"
 import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
-import Link from "next/link"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { WattsonRecommendationBox } from "@/components/wattson-recommendation-box"
 
 const data = [
   { time: "00:00", value: 0.23 },
@@ -16,7 +14,7 @@ const data = [
   { time: "06:01", value: 1.65 },
   { time: "06:59", value: 1.35 },
   { time: "07:00", value: 1.45 },
-  { time: "09:00", value: 1.00 },
+  { time: "09:00", value: 1.0 },
   { time: "12:00", value: 0.9 },
   { time: "15:00", value: 1.51 },
   { time: "18:00", value: 1.2 },
@@ -49,6 +47,11 @@ export default function HomePage() {
           <div className="absolute bottom-0 right-0 w-48 h-32 opacity-20">
             <img src="/placeholder.svg?height=128&width=192" alt="" className="w-full h-full object-contain" />
           </div>
+        </div>
+
+        {/* Wattson Recommendations */}
+        <div className="mb-6">
+          <WattsonRecommendationBox recommendationsCount={3} />
         </div>
 
         {/* Price Graph */}
@@ -103,6 +106,7 @@ export default function HomePage() {
             </CardContent>
           </Card>
         </div>
+
         {/* Analysis Card */}
         <Card className="bg-white/50 backdrop-blur border-none">
           <CardContent className="p-4">

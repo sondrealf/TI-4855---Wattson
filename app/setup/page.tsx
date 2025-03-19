@@ -44,7 +44,7 @@ export default function SetupPage() {
           ))}
         </div>
 
-        <div className="pt-8 flex justify-between items-center mx-4">
+        <div className="pt-8 flex justify-between items-center mx-4 mb-4">
           <div className="flex flex-col items-center">
             <Button size="icon" className="h-12 w-12 rounded-full mb-2 bg-green-600 hover:bg-green-700">
               <ArrowLeft className="h-6 w-6" />
