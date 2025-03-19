@@ -61,12 +61,12 @@ export function WattsonRecommendationBox({ recommendationsCount }: WattsonRecomm
               {/* Recommendation box */}
               <div className="w-2/3">
                 <div className="bg-green-200 rounded-lg p-4 border-2 border-green-600 transform rotate-1 shadow-md">
-                  <h3 className="font-bold text-lg">Wattson anbefaler:</h3>
-                  <h4 className="font-semibold">Varmtvannstand</h4>
+                  <h3 className="font-bold text-lg">Wattson recommends:</h3>
+                  <h4 className="font-semibold">Hot water tank</h4>
                   <p className="text-sm mt-2">
-                    Varmtvannstanken varmes opp til 72° under lavkost timer, for å unngå strømforbruk under høykost.
+                    The hot water tank is heated to 72° during low-cost hours, to avoid power consumption during high-cost periods.
                   </p>
-                  <p className="text-sm mt-2">Temp mellom 72°-60°</p>
+                  <p className="text-sm mt-2">Temperature between 72°-60°</p>
                 </div>
               </div>
             </div>
